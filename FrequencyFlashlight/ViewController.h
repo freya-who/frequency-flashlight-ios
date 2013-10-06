@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "FlashController.h"
 
+//and this is test number 2
+
 @interface ViewController : UIViewController
 {
     NSTimer *strobeTimer;
