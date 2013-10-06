@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A00577C1801CF1700AC25B0 /* FlashController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A00577B1801CF1700AC25B0 /* FlashController.m */; };
 		3ADEAFC917F3434700E8DF10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADEAFC817F3434700E8DF10 /* Foundation.framework */; };
 		3ADEAFCB17F3434700E8DF10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADEAFCA17F3434700E8DF10 /* CoreGraphics.framework */; };
 		3ADEAFCD17F3434700E8DF10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADEAFCC17F3434700E8DF10 /* UIKit.framework */; };
@@ -21,6 +22,7 @@
 		3ADEAFEA17F3434700E8DF10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADEAFCC17F3434700E8DF10 /* UIKit.framework */; };
 		3ADEAFF217F3434700E8DF10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3ADEAFF017F3434700E8DF10 /* InfoPlist.strings */; };
 		3ADEAFF417F3434700E8DF10 /* FrequencyFlashlightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADEAFF317F3434700E8DF10 /* FrequencyFlashlightTests.m */; };
+		3ADEAFFE17F346E900E8DF10 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADEAFFD17F346E900E8DF10 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A00577A1801CF1700AC25B0 /* FlashController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlashController.h; path = ../../iStrobe/FlashController.h; sourceTree = "<group>"; };
+		3A00577B1801CF1700AC25B0 /* FlashController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlashController.m; path = ../../iStrobe/FlashController.m; sourceTree = "<group>"; };
 		3ADEAFC517F3434700E8DF10 /* FrequencyFlashlight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrequencyFlashlight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ADEAFC817F3434700E8DF10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3ADEAFCA17F3434700E8DF10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +57,7 @@
 		3ADEAFEF17F3434700E8DF10 /* FrequencyFlashlightTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FrequencyFlashlightTests-Info.plist"; sourceTree = "<group>"; };
 		3ADEAFF117F3434700E8DF10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3ADEAFF317F3434700E8DF10 /* FrequencyFlashlightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrequencyFlashlightTests.m; sourceTree = "<group>"; };
+		3ADEAFFD17F346E900E8DF10 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ADEAFFE17F346E900E8DF10 /* AVFoundation.framework in Frameworks */,
 				3ADEAFCB17F3434700E8DF10 /* CoreGraphics.framework in Frameworks */,
 				3ADEAFCD17F3434700E8DF10 /* UIKit.framework in Frameworks */,
 				3ADEAFC917F3434700E8DF10 /* Foundation.framework in Frameworks */,
@@ -101,6 +107,7 @@
 		3ADEAFC717F3434700E8DF10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3ADEAFFD17F346E900E8DF10 /* AVFoundation.framework */,
 				3ADEAFC817F3434700E8DF10 /* Foundation.framework */,
 				3ADEAFCA17F3434700E8DF10 /* CoreGraphics.framework */,
 				3ADEAFCC17F3434700E8DF10 /* UIKit.framework */,
@@ -112,6 +119,8 @@
 		3ADEAFCE17F3434700E8DF10 /* FrequencyFlashlight */ = {
 			isa = PBXGroup;
 			children = (
+				3A00577A1801CF1700AC25B0 /* FlashController.h */,
+				3A00577B1801CF1700AC25B0 /* FlashController.m */,
 				3ADEAFD717F3434700E8DF10 /* AppDelegate.h */,
 				3ADEAFD817F3434700E8DF10 /* AppDelegate.m */,
 				3ADEAFDA17F3434700E8DF10 /* Main.storyboard */,
@@ -251,6 +260,7 @@
 			files = (
 				3ADEAFDF17F3434700E8DF10 /* ViewController.m in Sources */,
 				3ADEAFD917F3434700E8DF10 /* AppDelegate.m in Sources */,
+				3A00577C1801CF1700AC25B0 /* FlashController.m in Sources */,
 				3ADEAFD517F3434700E8DF10 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +470,7 @@
 				3ADEAFF917F3434700E8DF10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3ADEAFFA17F3434700E8DF10 /* Build configuration list for PBXNativeTarget "FrequencyFlashlightTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +479,7 @@
 				3ADEAFFC17F3434700E8DF10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
