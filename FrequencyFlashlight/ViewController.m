@@ -15,7 +15,7 @@
 @implementation ViewController
 
 @synthesize strobeTimer;
-@synthesize onButton;
+@synthesize onButton, offButton, frequencySlider, frequencyTextField;
 @synthesize flashController;
 @synthesize strobeActivated;
 
@@ -29,8 +29,10 @@
 	strobeActivated = NO;
 	
 	flashController = [[FlashController alloc] init];
-	
-	self.strobeTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(strobeTimerCallback:) userInfo:nil repeats:YES];
+    
+    frequencyTextField.text = [NSString stringWithFormat:@"%.2f", [self.frequencySlider value]];
+    
+    //self.strobeTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(strobeTimerCallback:) userInfo:nil repeats:YES];
 }
 
 
@@ -38,39 +40,68 @@
 - (void)strobeTimerCallback:(id)sender {
 	if (strobeActivated) {
 		strobeIsOn = !strobeIsOn;
-		[self startStopStrobe:strobeIsOn];
+        [flashController toggleStrobe:strobeIsOn];
 	}
     else {
-        [self startStopStrobe:NO];
+        [flashController toggleStrobe:NO];
     }
 }
 
-
-
 - (IBAction)strobeOn:(id)sender {
-	if(strobeActivated) {
-		strobeActivated = NO;
-	} else {
-		strobeActivated = YES;
-	}
     
-//	[self startStopStrobe:strobeActivated];
+    onButton.hidden = YES;
+    offButton.hidden = NO;
+    
+    strobeActivated = YES;
+    
+    [self.strobeTimer invalidate];
+    
+    self.strobeTimer = [NSTimer scheduledTimerWithTimeInterval:(1./(2.*[self.frequencySlider value])) target:self selector:@selector(strobeTimerCallback:) userInfo:nil repeats:YES];
+}
+
+- (IBAction)strobeOff:(id)sender {
+    
+    onButton.hidden = NO;
+    offButton.hidden = YES;
+    
+    strobeActivated = NO;
+    
+    [self.strobeTimer invalidate];
+    
+    [flashController toggleStrobe:NO];
 }
 
 
-- (void)startStopStrobe:(BOOL)strobeOnBool {
-	if (strobeOnBool) {
-		[flashController toggleStrobe:YES];
-	} else {
-		[flashController toggleStrobe:NO];
-	}
+- (IBAction) sliderValueChanged:(UISlider *)sender {
+    frequencyTextField.text = [NSString stringWithFormat:@"%.2f", [sender value]];
+    
+    [self.strobeTimer invalidate];
+    
+    self.strobeTimer = [NSTimer scheduledTimerWithTimeInterval:(1./(2.*[sender value])) target:self selector:@selector(strobeTimerCallback:) userInfo:nil repeats:YES];
 }
 
+- (IBAction) changeButtonPressed:(id)sender {
+    NSString *textValue = [frequencyTextField text];
+    float value = [textValue floatValue];
+    if (value < 0.1) value = 0.1;
+    if (value > 100) value = 100;
+    frequencySlider.value = value;
+    frequencyTextField.text = [NSString stringWithFormat:@"%.2f", value];
+    if ([frequencyTextField canResignFirstResponder]) [frequencyTextField resignFirstResponder];
+}
+
+- (void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event {
+    if (frequencyTextField) {
+        if ([frequencyTextField canResignFirstResponder]) [frequencyTextField resignFirstResponder];
+    }
+    [super touchesBegan: touches withEvent: event];
+}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

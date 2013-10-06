@@ -14,6 +14,9 @@
     NSTimer *strobeTimer;
     
     IBOutlet UIButton *onButton;
+    IBOutlet UIButton *offButton;
+    IBOutlet UISlider *frequencySlider;
+    IBOutlet UITextField *frequencyTextField;
     
     BOOL strobeIsOn;
     BOOL strobeActivated; // To allow user to turn off the light all together
@@ -22,17 +25,23 @@
 }
 
 @property(nonatomic, retain) NSTimer *strobeTimer;
-@property(nonatomic, strong) IBOutlet IBOutlet UIButton *onButton;
+
+@property(nonatomic, retain) IBOutlet UIButton *onButton;
+@property(nonatomic, retain) IBOutlet UIButton *offButton;
+@property(nonatomic, retain) IBOutlet UISlider *frequencySlider;
+@property(nonatomic, retain) IBOutlet UITextField *frequencyTextField;
 
 @property (nonatomic, assign) BOOL strobeActivated;
 
 @property(nonatomic, retain) FlashController *flashController;
 
--(IBAction)strobeOn:(id)sender; //combine powerbuttonpressed
+-(IBAction)strobeOn:(id)sender;
+-(IBAction)strobeOff:(id)sender;
+-(IBAction)sliderValueChanged:(id)sender;
+-(IBAction)changeButtonPressed:(id)sender;
 
 - (void)strobeTimerCallback:(id)sender;
 
-- (void)startStopStrobe:(BOOL)strobeOn;
 
 
 @end
