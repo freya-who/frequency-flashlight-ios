@@ -12,6 +12,8 @@
 
 @end
 
+
+//THIS IS A TEST TO SEE IF XCODE AND GITHUB WORK TOGETHER
 @implementation ViewController
 
 @synthesize strobeTimer, strobeFlashTimer;
