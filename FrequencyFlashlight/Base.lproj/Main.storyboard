@@ -26,21 +26,10 @@
                                     <action selector="strobeOn:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="q89-ZN-vT1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Au-36-a3o">
-                                <rect key="frame" x="219" y="134" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OFF">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="strobeOff:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="6PT-Mh-y8E"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="offButton" destination="4Au-36-a3o" id="3Pa-rh-lAy"/>
                         <outlet property="onButton" destination="AcZ-mB-FPL" id="1mE-NI-cBb"/>
                     </connections>
                 </viewController>
